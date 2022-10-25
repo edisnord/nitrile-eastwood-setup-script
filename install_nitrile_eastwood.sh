@@ -26,7 +26,8 @@ curl https://clean-lang.org/install.sh | /bin/sh
 
 cd ..
 rm -rf nitrile-script-temp
+sudo ln -s ~/.nitrile/bin/nitrile /bin/nitrile
 
-echo "Don't forget to add ~/.nitrile/bin to your PATH, as that is where Nitrile's binaries are located!"
+echo "A Nitrile Symlink has been added to /bin/!"
 echo "Enjoy :)"
 sleep 2
