@@ -5,12 +5,6 @@ sleep 5
 mkdir nitrile-script-temp
 cd nitrile-script-temp
 
-echo "Downloading and installing Eastwood..."
-sleep 2
-curl https://gitlab.com/top-software/eastwood/-/package_files/48884935/download -o eastwood.tgz
-tar -xzvf eastwood.tgz 
-sudo mv ./eastwood-1.1.2-linux-x64/bin/* /bin/
-
 echo "Downloading and installing libz3-4..."
 sleep 2
 mkdir z3deb
@@ -24,10 +18,11 @@ echo "Downloading and installing Nitrile..."
 sleep 2
 curl https://clean-lang.org/install.sh | /bin/sh
 
-cd ..
-rm -rf nitrile-script-temp
-sudo ln -s ~/.nitrile/bin/nitrile /bin/nitrile
+echo "Downloading and installing Eastwood..."
+sleep 2
+~/.nitrile/bin/nitrile update
+~/.nitrile/bin/nitrile global install eastwood
 
-echo "A Nitrile Symlink has been added to /bin/!"
+echo "Don't forget to add ~/.nitrile/bin to your PATH"
 echo "Enjoy :)"
 sleep 2
